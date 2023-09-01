@@ -1,24 +1,3 @@
-[//]: # ( This is a [Next.js]&#40;https://nextjs.org/&#41; project bootstrapped with [`create-next-app`]&#40;https://github.com/vercel/next.js/tree/canary/packages/create-next-app&#41;.)
-
-[//]: # ()
-[//]: # (## Getting Started)
-
-[//]: # ()
-[//]: # (First, run the development server:)
-
-[//]: # ()
-[//]: # (```bash)
-
-[//]: # (npm run dev)
-
-[//]: # (# or)
-
-[//]: # (yarn dev)
-
-[//]: # (```)
-
-[//]: # (Open [http://localhost:3010]&#40;http://localhost:3010&#41; with your browser to see the result.)
-
 # REST server for study (created on Next.js)
 ### Server has next endpoins:
 
@@ -43,7 +22,7 @@
 
 1. Clone repository
 ```bash
-git clone git@github.com:luckyby/practical-test-pyramid-server.git
+git clone git@github.com:luckyby/test-pyramid-testing.git
 ```
 
 2. Install all needed:
