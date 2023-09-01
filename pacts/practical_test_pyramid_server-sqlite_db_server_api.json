@@ -1,0 +1,44 @@
+{
+  "consumer": {
+    "name": "practical_test_pyramid_server"
+  },
+  "interactions": [
+    {
+      "description": "a request for orders",
+      "providerState": "there are orders",
+      "request": {
+        "method": "GET",
+        "path": "/api/person/id/1"
+      },
+      "response": {
+        "body": [
+          {
+            "firstname": "John",
+            "id": "1",
+            "lastname": "Doe",
+            "role": "unknown man"
+          }
+        ],
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "status": 200
+      }
+    }
+  ],
+  "metadata": {
+    "pact-js": {
+      "version": "10.4.0"
+    },
+    "pactRust": {
+      "ffi": "0.3.15",
+      "models": "1.0.1"
+    },
+    "pactSpecification": {
+      "version": "2.0.0"
+    }
+  },
+  "provider": {
+    "name": "sqlite_db_server_api"
+  }
+}

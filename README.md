@@ -1,34 +1,95 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+[//]: # ( This is a [Next.js]&#40;https://nextjs.org/&#41; project bootstrapped with [`create-next-app`]&#40;https://github.com/vercel/next.js/tree/canary/packages/create-next-app&#41;.)
 
-## Getting Started
+[//]: # ()
+[//]: # (## Getting Started)
 
-First, run the development server:
+[//]: # ()
+[//]: # (First, run the development server:)
 
+[//]: # ()
+[//]: # (```bash)
+
+[//]: # (npm run dev)
+
+[//]: # (# or)
+
+[//]: # (yarn dev)
+
+[//]: # (```)
+
+[//]: # (Open [http://localhost:3010]&#40;http://localhost:3010&#41; with your browser to see the result.)
+
+# REST server for study (created on Next.js)
+### Server has next endpoins:
+
+| method | enpoint                                                                                                 |  description |
+|--------|---------------------------------------------------------------------------------------------------------|---|
+| **POST**   | /api/users/restore with  body: {"login":"admin","password":"5678"}                                      | restore table "person" to original state  |
+| **POST**   | /api/users with body for example: {"firstname":"Ben","lastname":"Rogers","role":"captain"}              | create one user with firstname, lastname, and role  |
+| **GET**    | /api/users                                                                                              | return json object of all users in database  |
+| **GET**    | /api/users/id/[id]                                                                                      | return json object with data of one user selected by id  |
+| **PATCH**  | /api/users/id/[id] with body for example: {"firstname":"Peter","lastname":"Parker","role":"spider-man"} |  update one user by id |
+| **DELETE** | /api/users/id/[id]                                                                                      |  delete one user by id |
+| **DELETE** | /api/users                                                                                              | delete all users  |
+
+### Server has next pages:
+
+| link:  |  description: |
+|---|---|
+| /about  | page "About this server"  |
+| /exchange | page "Exchange rate USD to UAH by National Bank of Ukraine"  |
+
+## Getting Started:
+
+1. Clone repository
 ```bash
-npm run dev
-# or
-yarn dev
+git clone git@github.com:luckyby/practical-test-pyramid-server.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install all needed:
+```bash
+npm install
+```
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+3. Make next change before start:
+   - 3.1
+   For msw create in .env file next variables:
+    ```text
+    BASE_APP_URL='http://<host>:<port>'           # your server url
+    BASE_URL_DB_SERVER='http://<host>:<port>'     # your db server url
+    MOCKSERVER='1'                                # 1 for use mockserver
+    PACT_BROKER_URL='https://<yourAccaunt>.pactflow.io'  # your pactflow url
+    PACT_BROKER_TOKEN_R='ХХХХХХХХХХХХХХХХХХХХХХ'  # your pactflow only read token
+    PACT_BROKER_TOKEN_RW='ХХХХХХXXXXXXXXXXXXXXX'  # your pactflow read/write token
+    PROVIDER_BASE_URL='http://<host>:<port>'      # your pact provider url 
+    ```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+4. start sever in dev mode:
+```bash
+npm run dev
+```
 
-## Learn More
+or for production build application and start build:
+```bash
+npm run build
+npm run start
+```
+The default application runs on port = 3000
 
-To learn more about Next.js, take a look at the following resources:
+If you want to run the application on a different port (for example 3010), type in the terminal:
+```bash
+PORT=3010 npm run dev
+```
+or change in package.json:
+```text
+"scripts": {
+    ...
+    "dev": "next dev -p 3010",
+    ...
+}
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+ Then open [http://localhost:3010](http://localhost:3010) with your browser to see the result.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.

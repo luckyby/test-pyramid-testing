@@ -11,6 +11,7 @@
 # next.js
 /.next/
 /out/
+/next
 
 # production
 /build
@@ -34,3 +35,14 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+#directory
+/src_dump
+/src_tests_dump
+.idea
+
+
+#files
+public/favicon.ico_
+styles/Home.module_old.css
+.env_
